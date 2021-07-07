@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titulo %} PANEL DE SISTEMA {% endblock %} 
+{% block contenido %}
+{% include "nav.html" %}
+<div class="container">
+    <h1 class="text-center py-4">PANEL DE SISTEMA PARA ADMINISTRADORES</h1>
+
+  <h2>ESTAS EN UNA VISTA SOLO CON ACCESO PARA ADMINISTRADORES</h2>
+  <h3>ID: {{request.session.usuario.id}}</h3>
+  <h3>Usuario: {{request.session.usuario.name}} </h3>
+  <h3>Correo: {{request.session.usuario.email}} </h3>
+  <h3>Rol: {{request.session.usuario.rol}} </h3>
+
+
+</div>
+{% endblock %}

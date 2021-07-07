@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block titulo %} SISTEMA DE REGISTRO Y LOGIN {% endblock %}
+{% block contenido %}
+<div class="container">
+    <a href="/" type="button" class="btn btn-dark my-4 float-right">VOLVER INICIO</a>
+    <h1 class="text-center py-4">REGISTRAR USUARIO</h1>
+
+    <div class="col-5">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="firstname" value="{{request.session.registro_nombre}}" >
+
+            <label class="form-label">Apellido</label>
+            <input type="text" class="form-control" name="lastname" value="{{request.session.registro_apellido}}">
+
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" value="{{request.session.registro_email}}">
+
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" name="password">
+
+            <label class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" name="password_confirm">
+
+
+            <button type="submit" class="btn btn-primary my-3">Agregar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
