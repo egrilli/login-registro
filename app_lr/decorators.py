@@ -17,6 +17,7 @@ def val_admin(function):
     def wrapper(request, *args):
         if request.session['usuario']['rol'] != "ADMINISTRADOR":
             messages.error(request, "El usuario no es administrador por lo tanto no tiene acceso , usuario corresponde a " + request.session['usuario']['rol'])
+            
             return redirect("/panel")
         resp=function(request, *args)
         return resp

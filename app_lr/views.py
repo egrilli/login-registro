@@ -71,10 +71,10 @@ def logearse(request):
 
     return render(request, 'logearse.html')
 
-def panel(request):
-    if 'usuario' not in request.session:
-        return redirect("/")
 
+
+@login_required
+def panel(request):
     return render(request, 'panel.html')
 
 
@@ -88,6 +88,7 @@ def logout(request):
 @login_required
 def colaborador(request):
     return render(request, 'colaborador.html')
+
 
 @login_required
 @val_admin
