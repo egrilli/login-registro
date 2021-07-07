@@ -1,7 +1,8 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from app_lr.models import User
 import bcrypt
+from app_lr.models import User
+from app_lr.decorators import *
 
 def index(request):
 
@@ -84,19 +85,12 @@ def logout(request):
     return redirect("/")
 
 
+@login_required
 def colaborador(request):
-    if 'usuario' not in request.session:
-        return redirect("/")
-
     return render(request, 'colaborador.html')
 
+@login_required
+@val_admin
 def administrador(request):
-    if 'usuario' not in request.session:
-        return redirect("/")
-
-    if request.session['usuario']['rol'] != "ADMINISTRADOR":
-        messages.error(request, "El usuario no es administrador por lo tanto no tiene acceso , usuario corresponde a " + request.session['usuario']['rol'])
-    
-
     return render(request, 'administrador.html')
 
