@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8j=&3+8b&9vf8xs#if5vlt_-t_g2t348!s_x*o-+!d=ibifn$j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.128.33.118']
 
 
 # Application definition
@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bd_login_registro',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'egrilli',
+        'PASSWORD': 'Xkisj220*9291',
         'HOST':'localhost',
         'PORT':'3306',
     }
@@ -128,3 +128,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
