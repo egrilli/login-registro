@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8j=&3+8b&9vf8xs#if5vlt_-t_g2t348!s_x*o-+!d=ibifn$j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['3.128.33.118']
+ALLOWED_HOSTS = ['3.128.33.118','app.openbuytrace.com']
 
 
 # Application definition
